@@ -35,10 +35,30 @@ namespace Examen_Mvvm.ViewModels
 
             try
             {
+                Subtotal = P1 + P2 + P3;
+                
+                
 
-                Total = Subtotal + Descuento;
-
-
+                if (Subtotal < 999)
+                {
+                    Descuento = 0;
+                    Total = Subtotal + Descuento;
+                } 
+                if  (Subtotal > 1000 & Subtotal < 4999)
+                {
+                    Descuento =  (Subtotal * 10) / 100;
+                    Total = Subtotal + Descuento;
+                }
+               else  if (Subtotal > 5000 & Subtotal < 9999)
+                {
+                    Descuento = (Subtotal * 20) / 100;
+                    Total = Subtotal + Descuento;
+                }
+                else if(Subtotal > 10000)
+                {
+                    Descuento = (Subtotal * 30) / 100;
+                    Total = Subtotal + Descuento;
+                }
             }
 
 
